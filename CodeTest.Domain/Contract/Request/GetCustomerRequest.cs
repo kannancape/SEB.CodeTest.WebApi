@@ -1,7 +1,6 @@
-﻿using System;
-namespace CodeTest.Domain.Contract.Request
+﻿namespace CodeTest.Domain.Contract.Request
 {
-	public class GetCustomerRequest
+    public class GetCustomerRequest
 	{
 		 
 		public string UserId { get; set; }
