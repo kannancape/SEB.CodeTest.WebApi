@@ -20,6 +20,7 @@
     <None Remove="MediatR" />
     <None Remove="Repository\Implementation\" />
     <None Remove="Repository\Interface\" />
+    <None Remove="log4net" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\" />
@@ -39,5 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="log4net" Version="2.0.14" />
   </ItemGroup>
 </Project>
