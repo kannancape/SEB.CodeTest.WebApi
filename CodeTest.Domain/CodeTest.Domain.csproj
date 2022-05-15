@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Commands\" />
+    <None Remove="Entities\" />
+    <None Remove="Handlers\" />
+    <None Remove="Queries\" />
+    <None Remove="Repository\" />
+    <None Remove="Handlers\Query\" />
+    <None Remove="Handlers\Command\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Handlers\" />
+    <Folder Include="Queries\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Handlers\Query\" />
+    <Folder Include="Handlers\Command\" />
+  </ItemGroup>
+</Project>
