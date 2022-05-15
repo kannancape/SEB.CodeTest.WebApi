@@ -12,6 +12,14 @@
     <None Remove="Repository\" />
     <None Remove="Handlers\Query\" />
     <None Remove="Handlers\Command\" />
+    <None Remove="QueryBase\" />
+    <None Remove="ExceptionHandling\" />
+    <None Remove="Contract\" />
+    <None Remove="Contract\Request\" />
+    <None Remove="Contract\Response\" />
+    <None Remove="MediatR" />
+    <None Remove="Repository\Implementation\" />
+    <None Remove="Repository\Interface\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\" />
@@ -21,5 +29,15 @@
     <Folder Include="Repository\" />
     <Folder Include="Handlers\Query\" />
     <Folder Include="Handlers\Command\" />
+    <Folder Include="QueryBase\" />
+    <Folder Include="ExceptionHandling\" />
+    <Folder Include="Contract\" />
+    <Folder Include="Contract\Request\" />
+    <Folder Include="Contract\Response\" />
+    <Folder Include="Repository\Implementation\" />
+    <Folder Include="Repository\Interface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="10.0.1" />
   </ItemGroup>
 </Project>

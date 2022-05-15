@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -6,8 +6,28 @@
 
   <ItemGroup>
     <None Remove="Dispatcher\" />
+    <None Remove="MediatR" />
+    <None Remove="Bootstrap\" />
+    <None Remove="SimpleInjector" />
+    <None Remove="System.Composition" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dispatcher\" />
+    <Folder Include="Bootstrap\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="SimpleInjector" Version="5.3.3" />
+    <PackageReference Include="System.Composition" Version="6.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeTest.Domain\CodeTest.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Properties\launchSettings.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 </Project>
