@@ -2,14 +2,13 @@
 using System.Threading;
 using System.Threading.Tasks;
 using CodeTest.Domain.Commands;
-using CodeTest.Domain.Contract.Request;
 using CodeTest.Domain.Contract.Response;
 using CodeTest.Domain.Repository.Interface;
 using MediatR;
 
 namespace CodeTest.Domain.Handlers.Command
 {
-	
+
     public class AddCustomerInfoHandler : IRequestHandler<AddCustomerInfoCommand, AddCustomerInfoResponse>
     {
         private ICustomerRepository _customerRepository;

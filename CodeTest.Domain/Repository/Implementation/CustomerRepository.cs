@@ -1,7 +1,5 @@
 ﻿using System.Threading.Tasks;
 using CodeTest.Domain.Commands;
-using CodeTest.Domain.Contract.Request;
-using CodeTest.Domain.Contract.Response;
 using CodeTest.Domain.Entities;
 using CodeTest.Domain.Repository.Interface;
 

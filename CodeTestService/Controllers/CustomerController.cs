@@ -25,20 +25,21 @@ namespace CodeTestService.Controllers
         public async Task<IActionResult> GetCustomerInfo(string userId)
         {
             var query = new GetCustomerQuery(userId);
-            var result = await MediatorDispatcher.ExecuteMediatorAsync<GetCustomerQuery>(query);
+            var result = await MediatorDispatcher.ExecuteMediatorAsync(query);
             return Ok(result);
         }
+
         [HttpPost]
         [Route("AddCustomerInfo")]
         public async Task<IActionResult> AddCustomerInfo([FromBody] AddCustomerInfoRequest user)
         {
-            var cmd = new AddCustomerInfoCommand(user);
+            var command = new AddCustomerInfoCommand(user);
             if (string.IsNullOrEmpty(user.SocialNumber))
             {
-                var msg = new HttpResponseMessage(HttpStatusCode.BadRequest) { ReasonPhrase = "Invalid Input" };
-                throw new InvalidDataException(msg.ToString());
+                var message = new HttpResponseMessage(HttpStatusCode.BadRequest) { ReasonPhrase = "Invalid Input" };
+                throw new InvalidDataException(message.ToString());
             }
-            var result = await MediatorDispatcher.ExecuteMediatorAsync<AddCustomerInfoCommand>(cmd);
+            var result = await MediatorDispatcher.ExecuteMediatorAsync(command);
             return Ok(result);
         }
     }
