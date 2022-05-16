@@ -3,7 +3,7 @@
     public class GetCustomerRequest
 	{
 		 
-		public string UserId { get; set; }
+		public string socialNumber { get; set; }
 
 		
 	}
