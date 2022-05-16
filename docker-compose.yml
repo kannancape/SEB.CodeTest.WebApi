@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  codetestservice:
+    image: ${DOCKER_REGISTRY-}codetestservice
+    build:
+      context: .
+      dockerfile: CodeTestService\Dockerfile
