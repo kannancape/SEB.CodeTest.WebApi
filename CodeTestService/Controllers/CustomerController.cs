@@ -7,6 +7,7 @@ using CodeTest.Domain.Commands;
 using System.Net.Http;
 using System.IO;
 using System.Net;
+using Microsoft.AspNetCore.Http;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,12 +21,17 @@ namespace CodeTestService.Controllers
         {
         }
 
-        [Route("GetCustomerInfo/{socialNumber}")]
+        [Route("CustomerInfo")] 
         [HttpGet]
         public async Task<IActionResult> GetCustomerInfo(string socialNumber)
         {
             var query = new GetCustomerQuery(socialNumber);
             var result = await MediatorDispatcher.ExecuteMediatorAsync(query);
+            if (result.Result == null) 
+            {
+                var message = new HttpResponseMessage(HttpStatusCode.NoContent) { ReasonPhrase = "No Data Found" };
+                throw new InvalidDataException(message.ToString());
+            }
             return Ok(result);
         }    
 
@@ -44,7 +50,7 @@ namespace CodeTestService.Controllers
             return Ok(result);
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("ModifyCustomerInfo")]
         public async Task<IActionResult> ModifyCustomerInfo([FromBody] AddCustomerInfoRequest user)
         {

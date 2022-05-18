@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
     <UserSecretsId>c9c4e606-d54e-410d-8650-d14cbf96e1d7</UserSecretsId>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS> 
